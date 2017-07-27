@@ -104,6 +104,8 @@ int init_osc(int osc_port) {
 
   lo_server_thread_add_method(osc_server, "/jack_capture/tm/start",  "",  &oscb_tm_start, NULL);
   lo_server_thread_add_method(osc_server, "/jack_capture/tm/stop",   "",  &oscb_tm_stop, NULL);
+  lo_server_thread_add_method(osc_server, "/jack_capture/tm/start",  "f",  &oscb_tm_start, NULL);
+  lo_server_thread_add_method(osc_server, "/jack_capture/tm/stop",   "f",  &oscb_tm_stop, NULL);
   lo_server_thread_add_method(osc_server, "/jack_capture/stop",      "",  &oscb_stop, NULL);
   lo_server_thread_add_method(osc_server, "/jack_capture/rotate",    "",  &oscb_frotate, NULL);
 
