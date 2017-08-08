@@ -114,6 +114,11 @@ static void* my_malloc(size_t size1,size_t size2){
       cret[i]=0;
   }
 
+  if (mlock (ret, size)) {
+    fprintf(stderr,"\nCould not mlock buffer\n");
+    return NULL;
+  }
+
   return ret;
 }
 
